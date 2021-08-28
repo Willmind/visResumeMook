@@ -12,7 +12,7 @@ import {isHttpOrHttpsUrl} from "@common/utils/router";
 function Root() {
     const dispatch = useDispatch();
     const appName = useSelector((state: any) => state.globalModel.appName);
-    
+
     // 👇 通过 history.push 进行跳转
     const history = useHistory();
     const onRouterToLink = (router: TSRouter.Item) => {
