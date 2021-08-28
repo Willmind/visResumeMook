@@ -1,15 +1,18 @@
 // renderer/container/root/index.tsx
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './index.less';
-
+import {useSelector, useDispatch} from 'react-redux';
 // @ts-ignore
 import Logo from '@assets/logo.png';
 import {useHistory} from 'react-router';
-import { shell } from 'electron';
-import { ROUTER_ENTRY, ROUTER_KEY } from '@common/constants/router';
+import {shell} from 'electron';
+import {ROUTER_ENTRY, ROUTER_KEY} from '@common/constants/router';
 import {isHttpOrHttpsUrl} from "@common/utils/router";
 
 function Root() {
+    const dispatch = useDispatch();
+    const appName = useSelector((state: any) => state.globalModel.appName);
+    
     // 👇 通过 history.push 进行跳转
     const history = useHistory();
     const onRouterToLink = (router: TSRouter.Item) => {
