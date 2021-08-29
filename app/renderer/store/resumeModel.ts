@@ -4,22 +4,22 @@ const resumeModel: TSRcReduxModel.Props<TSResume.IntactResume> = {
   state: {
     base: {
       avatar: '',
-      username: '彭道宽',
-      area: '海南·海口',
-      school: '湖南瞎说大学',
-      major: '软件工程',
+      username: '谭志锦',
+      area: '广东·佛山',
+      school: '江西理工大学',
+      major: '电子信息工程',
       degree: '本科',
-      hometown: '海南',
+      hometown: '广东',
       onSchoolTime: {
-        beginTime: '2015.09',
-        endTime: '2019.06',
+        beginTime: '2016.09',
+        endTime: '2020.06',
       },
     },
     contact: {
-      phone: '176****2612',
-      email: '1063137960@qq.com',
-      github: 'https://github.com/PDKSophia',
-      juejin: 'https://juejin.cn/user/1838039171075352',
+      phone: '13126476635',
+      email: 'tanzhijingege@126.com',
+      // github: 'https://github.com/PDKSophia',
+      // juejin: 'https://juejin.cn/user/1838039171075352',
     },
     work: {
       job: '前端工程师',
