@@ -6,6 +6,7 @@ class Messager {
     //发送
     send = (eventName: string, payload: any) => {
         console.log(123);
+        console.log(eventName);
         document.dispatchEvent(
             new CustomEvent(eventName, {
                 detail: {

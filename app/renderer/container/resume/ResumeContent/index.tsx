@@ -13,6 +13,10 @@ import EducationForm from './UseForm/Education';
 import PersonalForm from './UseForm/Personal';
 import SkillForm from './UseForm/Skill';
 import WorkForm from './UseForm/Work';
+import ProjectExperience from './UseForm/ProjectExperience';
+import SchoolExperience from './UseForm/SchoolExperience';
+import WorkExperience from './UseForm/WorkExperience';
+
 
 
 function ResumeContent() {
@@ -34,7 +38,9 @@ function ResumeContent() {
      * @description 接收订阅事件的传参
      */
     const onReceive = (e: any) => {
+
         Messager.receive(e, (data: any) => {
+
             setShowFormModal(true);
             setFormName(data?.form_name);
         });
@@ -57,6 +63,10 @@ function ResumeContent() {
                     {formName === RESUME_TOOLBAR_MAPS.personal && <PersonalForm onClose={onClose} />}
                     {formName === RESUME_TOOLBAR_MAPS.skill && <SkillForm onClose={onClose} />}
                     {formName === RESUME_TOOLBAR_MAPS.workPrefer && <WorkForm onClose={onClose} />}
+                    {formName === RESUME_TOOLBAR_MAPS.projectExperience && <ProjectExperience onClose={onClose} />}
+                    {formName === RESUME_TOOLBAR_MAPS.schoolExperience && <SchoolExperience onClose={onClose} />}
+                    {formName === RESUME_TOOLBAR_MAPS.workExperience && <WorkExperience onClose={onClose} />}
+
                 </>
             )}
         </MyScrollBox>
