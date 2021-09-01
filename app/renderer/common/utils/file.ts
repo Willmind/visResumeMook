@@ -2,6 +2,15 @@
 import fs, { promises as fsPromiseAPIs } from 'fs';
 
 const fileAction = {
+
+    /**
+     * @description 读取目录内容
+     * @param path 路径
+     * @returns  {Promise}
+     */
+    readDir: (path: string): Promise<string[]> => {
+        return fsPromiseAPIs.readdir(path);
+    },
     read: (path: string, encoding: BufferEncoding): Promise<string> => {
         return fsPromiseAPIs.readFile(path, { encoding: encoding || 'utf8' });
     },

@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import './index.less';
-import MyModal from '@common/components/MyModal';
-import MyInput from '@common/components/MyInput';
+import RsmModal from '@common/components/RsmModal';
+import RsmInput from '@common/components/RsmInput';
 import { useSelector } from 'react-redux';
 import useUpdateResumeHook from '@src/container/resume/ResumeContent/useUpdateResumeHook';
 
@@ -16,7 +16,7 @@ function Contact({ onClose }: IProps) {
   const contact: TSResume.Contact = useSelector((state: any) => state.resumeModel.contact);
 
   return (
-    <MyModal.Dialog
+    <RsmModal.Dialog
       title="联系方式"
       showFooter={false}
       config={{
@@ -31,7 +31,7 @@ function Contact({ onClose }: IProps) {
             <span styleName="require">*</span>电 话 ：
           </div>
           <div styleName="right">
-            <MyInput
+            <RsmInput
               onChange={(e) => {
                 updateResumeHook<string>('contact/phone', e.target.value);
               }}
@@ -46,7 +46,7 @@ function Contact({ onClose }: IProps) {
             <span styleName="require">*</span>邮 箱 ：
           </div>
           <div styleName="right">
-            <MyInput
+            <RsmInput
               onChange={(e) => {
                 updateResumeHook<string>('contact/email', e.target.value);
               }}
@@ -64,7 +64,7 @@ function Contact({ onClose }: IProps) {
             Github ：
           </div>
           <div styleName="right">
-            <MyInput
+            <RsmInput
               onChange={(e) => {
                 updateResumeHook<string>('contact/github', e.target.value);
               }}
@@ -82,7 +82,7 @@ function Contact({ onClose }: IProps) {
             Juejin ：
           </div>
           <div styleName="right">
-            <MyInput
+            <RsmInput
               onChange={(e) => {
                 updateResumeHook<string>('contact/juejin', e.target.value);
               }}
@@ -93,7 +93,7 @@ function Contact({ onClose }: IProps) {
           </div>
         </div>
       </div>
-    </MyModal.Dialog>
+    </RsmModal.Dialog>
   );
 }
 

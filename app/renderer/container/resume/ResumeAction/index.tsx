@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 
 // 👇 这里调用我们第八章封装好的通用组件即可
-import MyButton from "@common/components/MyButton";
+import RsmButton from "@common/components/RsmButton";
 
 function ResumeAction() {
     const base: TSResume.Base = useSelector((state: any) => state.resumeModel.base);
@@ -26,7 +26,7 @@ function ResumeAction() {
     return (
         <div styleName="actions">
             <div styleName="back" onClick={onBack}>返回</div>
-            <MyButton size="middle" className="export-btn" onClick={onExport}>导出PDF</MyButton>
+            <RsmButton size="middle" className="export-btn" onClick={onExport}>导出PDF</RsmButton>
         </div>
     );
 }

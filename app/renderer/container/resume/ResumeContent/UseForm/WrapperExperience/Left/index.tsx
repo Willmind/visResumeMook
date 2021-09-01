@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import './index.less';
-import MyButton from '@common/components/MyButton';
-import MyScrollBox from '@common/components/MyScrollBox';
+import RsmButton from '@common/components/RsmButton';
+import RsmUpload from '@common/components/RsmScrollBox';
 import List, { IListProps } from './List';
 
 interface IProps extends IListProps {
@@ -16,13 +16,13 @@ function Left({ index, experienceList = [], onDelete, onAdd, onChange }: IProps)
     <div styleName="layout-left">
       {experienceList.length > 0 && (
         <>
-          <MyScrollBox maxHeight={420}>
+          <RsmUpload maxHeight={420}>
             <List index={index} experienceList={experienceList} onChange={onChange} onDelete={onDelete} />
-          </MyScrollBox>
+          </RsmUpload>
           <div styleName="action">
-            <MyButton width={112} size="middle" onClick={onAdd}>
+            <RsmButton width={112} size="middle" onClick={onAdd}>
               添加条目
-            </MyButton>
+            </RsmButton>
           </div>
         </>
       )}
@@ -30,9 +30,9 @@ function Left({ index, experienceList = [], onDelete, onAdd, onChange }: IProps)
         <div styleName="empty">
           <div styleName="empty-tips">还没有内容，快添加一下吧～</div>
           <div styleName="empty-action">
-            <MyButton width={112} size="middle" onClick={onAdd}>
+            <RsmButton width={112} size="middle" onClick={onAdd}>
               添加条目
-            </MyButton>
+            </RsmButton>
           </div>
         </div>
       )}

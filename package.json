@@ -3,16 +3,29 @@
   "version": "0.0.1",
   "author": "彭道宽",
   "description": "从0到1实现一款轻巧适用的简历平台桌面应用。",
-  "main": "./app/main/electron.js",
+  "main": "./dist/electron.js",
+  "build": {
+    "appId": "visResumeMook.ElectronReact",
+    "productName": "VisResumeMook",
+    "copyright": "Copyright © 2019 ${author}",
+    "files": [
+      "dist/**/*",
+      "package.json",
+      "node_modules/"
+    ]
+  },
   "scripts": {
     "start:main": "webpack --config ./webpack/webpack.main.dev.js && electron ./dist/electron.js",
     "start:render": "webpack-dev-server --config ./webpack/webpack.render.dev.js",
-    "install:electron": "ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/ npm install electron"
+    "install:electron": "ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/ npm install electron",
+    "build:main": "webpack --config ./webpack/webpack.main.prod.js",
+    "build:render": "webpack --config ./webpack/webpack.render.prod.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "classnames": "^2.3.1",
-    "electron": "^11.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
@@ -26,6 +39,7 @@
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
+    "@types/lodash": "^4.14.172",
     "@types/react": "^17.0.5",
     "@types/react-css-modules": "^4.6.2",
     "@types/react-dom": "^17.0.5",
@@ -38,6 +52,8 @@
     "babel-plugin-react-css-modules": "^5.2.6",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^3.0.0",
+    "electron": "^11.1.1",
+    "electron-builder": "^22.11.7",
     "eslint": "^7.26.0",
     "eslint-config-alloy": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",
@@ -48,6 +64,7 @@
     "html-webpack-plugin": "^4.3.0",
     "less": "^3.12.2",
     "less-loader": "^6.2.0",
+    "lodash": "^4.17.21",
     "postcss-less": "^4.0.1",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.3.0",

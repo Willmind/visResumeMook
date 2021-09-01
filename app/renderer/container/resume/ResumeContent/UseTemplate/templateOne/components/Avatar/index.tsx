@@ -6,8 +6,8 @@ import React from 'react';
 import './index.less';
 import { useSelector } from 'react-redux';
 import uploadIcon from '@assets/icon/upload.png';
-import MyButton from '@common/components/MyButton';
-import ImageUpload from '@common/components/MyUpload/ImageUpload';
+import RsmButton from '@common/components/RsmButton';
+import ImageUpload from '@common/components/RsmUpload/ImageUpload';
 import useUpdateResumeHook from '@src/container/resume/ResumeContent/useUpdateResumeHook';
 
 function Avatar() {
@@ -34,9 +34,9 @@ function Avatar() {
         <div styleName="avatar">
           <img src={base?.avatar} />
           <div styleName="mask">
-            <MyButton size="small" className="btn-change" onClick={() => onUpdateUserAvatar('')}>
+            <RsmButton size="small" className="btn-change" onClick={() => onUpdateUserAvatar('')}>
               更换
-            </MyButton>
+            </RsmButton>
           </div>
         </div>
       )}

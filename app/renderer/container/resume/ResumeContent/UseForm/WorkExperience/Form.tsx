@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.less';
-import MyInput from '@common/components/MyInput';
+import RsmInput from '@common/components/RsmInput';
 import { AdapterExperienceType } from '../WrapperExperience/adapter';
 
 interface IProps {
@@ -21,7 +21,7 @@ function Form({ isDisable, currentItem, onChangeCurrentItem }: IProps) {
           <span styleName="require">*</span>公司 ：
         </div>
         <div styleName="right">
-          <MyInput
+          <RsmInput
             onChange={(e) => onChangeValue('title', e.target.value)}
             value={currentItem?.title}
             placeholder="请输入之前就职的公司"
@@ -35,7 +35,7 @@ function Form({ isDisable, currentItem, onChangeCurrentItem }: IProps) {
           <span styleName="require">*</span>职 位 ：
         </div>
         <div styleName="right">
-          <MyInput
+          <RsmInput
             onChange={(e) => onChangeValue('post', e.target.value)}
             value={currentItem?.post}
             placeholder="期间担任什么职位"
@@ -49,7 +49,7 @@ function Form({ isDisable, currentItem, onChangeCurrentItem }: IProps) {
           <span styleName="require">*</span>时 间 ：
         </div>
         <div styleName="right">
-          <MyInput
+          <RsmInput
             onChange={(e) => onChangeValue('beginTime', e.target.value)}
             value={currentItem?.beginTime}
             placeholder="2015.09.01"
@@ -58,7 +58,7 @@ function Form({ isDisable, currentItem, onChangeCurrentItem }: IProps) {
             disabled={isDisable}
           />
           <span styleName="line">-</span>
-          <MyInput
+          <RsmInput
             onChange={(e) => onChangeValue('endTime', e.target.value)}
             value={currentItem?.endTime}
             placeholder="2015.09.01"
@@ -73,7 +73,7 @@ function Form({ isDisable, currentItem, onChangeCurrentItem }: IProps) {
           <span styleName="require">*</span>内 容 ：
         </div>
         <div styleName="right">
-          <MyInput
+          <RsmInput
             type="textarea"
             onChange={(e) => onChangeValue('content', e.target.value)}
             rows={5}

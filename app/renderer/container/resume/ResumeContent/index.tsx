@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import './index.less';
 
 import * as UseTemplateList from './UseTemplate';
-import MyScrollBox from "@common/components/MyScrollBox";
+import RsmUpload from "@common/components/RsmScrollBox";
 
 import Messager, {MESSAGE_EVENT_NAME_MAPS} from '@common/messager';
 import {RESUME_TOOLBAR_MAPS} from '@common/constants/resume';
@@ -53,7 +53,7 @@ function ResumeContent() {
     const HEADER_ACTION_HEIGHT = 92;
     const height = document.body.clientHeight;
     return (
-        <MyScrollBox maxHeight={height - HEADER_ACTION_HEIGHT}>
+        <RsmUpload maxHeight={height - HEADER_ACTION_HEIGHT}>
             <UseTemplateList.TemplateOne/>
             {showFormModal && (
                 <>
@@ -69,7 +69,7 @@ function ResumeContent() {
 
                 </>
             )}
-        </MyScrollBox>
+        </RsmUpload>
     )
 }
 

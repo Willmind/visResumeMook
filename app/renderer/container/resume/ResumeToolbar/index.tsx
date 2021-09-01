@@ -3,7 +3,7 @@
  */
 import React, { useEffect, useState } from 'react';
 import './index.less';
-import MyScrollBox from '@common/components/MyScrollBox';
+import RsmUpload from '@common/components/RsmScrollBox';
 import RESUME_TOOLBAR_LIST from '@common/constants/resume';
 import { onAddToolbar, onDeleteToolbar } from './utils';
 import { useDispatch } from 'react-redux';
@@ -61,7 +61,7 @@ function ResumeToolbar() {
 
     return (
         <div styleName="slider">
-            <MyScrollBox maxHeight={height - 180}>
+            <RsmUpload maxHeight={height - 180}>
                 {!!addToolbarList.length && (
                     <div styleName="module">
                         <div styleName="title">
@@ -129,7 +129,7 @@ function ResumeToolbar() {
                         </div>
                     </div>
                 )}
-            </MyScrollBox>
+            </RsmUpload>
         </div>
     );
 }
