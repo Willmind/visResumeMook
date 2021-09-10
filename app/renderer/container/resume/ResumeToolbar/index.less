@@ -39,16 +39,16 @@
         cursor: pointer;
         position: relative;
         user-select: none;
-        //&:hover {
-        //  .info {
-        //    .tips {
-        //      display: block;
-        //    }
-        //    .action {
-        //      display: inline-flex;
-        //    }
-        //  }
-        //}
+        &:hover {
+          .info {
+            .tips {
+              display: block;
+            }
+            .action {
+              display: inline-flex;
+            }
+          }
+        }
         .info {
           display: flex;
           .icon {
@@ -85,7 +85,7 @@
             font-size: 12px;
             color: #ffffff;
             text-align: center;
-            display: block;
+            display: none;
             border-top-right-radius: 8px;
             border-bottom-left-radius: 8px;
           }
@@ -94,7 +94,7 @@
             right: 0;
             top: 18px;
             width: 40px;
-            display: inline-flex;
+            display: none;
             height: 20px;
             .edit {
               width: 16px;

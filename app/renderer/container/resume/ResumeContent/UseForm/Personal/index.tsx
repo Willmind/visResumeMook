@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import './index.less';
-import RsmModal from '@common/components/RsmModal';
-import RsmInput from '@common/components/RsmInput';
+import MyModal from '@common/components/MyModal';
+import MyInput from '@common/components/MyInput';
 import { useSelector } from 'react-redux';
 import useUpdateResumeHook from '@src/container/resume/ResumeContent/useUpdateResumeHook';
 
@@ -16,7 +16,7 @@ function Personal({ onClose }: IProps) {
   const hobby: string = useSelector((state: any) => state.resumeModel.hobby);
   const base: TSResume.Base = useSelector((state: any) => state.resumeModel.base);
   return (
-    <RsmModal.Dialog
+    <MyModal.Dialog
       title="个人信息"
       showFooter={false}
       config={{
@@ -31,7 +31,7 @@ function Personal({ onClose }: IProps) {
             <span styleName="require">*</span>姓 名 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               onChange={(e) => {
                 updateResumeHook('base/username', e.target?.value || '');
               }}
@@ -46,7 +46,7 @@ function Personal({ onClose }: IProps) {
             <span styleName="require">*</span>籍 贯 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               onChange={(e) => {
                 updateResumeHook('base/hometown', e.target?.value || '');
               }}
@@ -64,7 +64,7 @@ function Personal({ onClose }: IProps) {
             爱 好 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               type="textarea"
               onChange={(e) => {
                 updateResumeHook('hobby', e.target?.value || '');
@@ -77,7 +77,7 @@ function Personal({ onClose }: IProps) {
           </div>
         </div>
       </div>
-    </RsmModal.Dialog>
+    </MyModal.Dialog>
   );
 }
 

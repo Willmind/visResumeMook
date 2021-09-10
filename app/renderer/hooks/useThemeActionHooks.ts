@@ -15,9 +15,9 @@ import { useDispatch, useSelector } from 'react-redux';
  * @description 获取当前主题与修改组件方法
  */
 function useGetCurrentTheme() {
-    const changeTheme = useChangeCurrentTheme();
-    const currentTheme = useSelector((state: any) => state.themeModel.currentTheme);
-    return [currentTheme, changeTheme];
+  const changeTheme = useChangeCurrentTheme();
+  const currentTheme = useSelector((state: any) => state.themeModel.currentTheme);
+  return [currentTheme, changeTheme];
 }
 
 /**
@@ -26,85 +26,85 @@ function useGetCurrentTheme() {
  * @param {boolean} isAsyncUpdateJsonFile 是否同步更新jsonfile配置
  */
 function useChangeCurrentTheme() {
-    const dispatch = useDispatch();
-    const updateAppConfigThemeFile = useUpdateAppConfigThemeFile();
-    return (theme: TSTheme.Item) => {
-        dispatch({
-            type: 'themeModel/setStore',
-            payload: {
-                key: 'currentTheme',
-                values: theme,
-            },
-        });
-        updateAppConfigThemeFile('currentTheme', theme);
-    };
+  const dispatch = useDispatch();
+  const updateAppConfigThemeFile = useUpdateAppConfigThemeFile();
+  return (theme: TSTheme.Item) => {
+    dispatch({
+      type: 'themeModel/setStore',
+      payload: {
+        key: 'currentTheme',
+        values: theme,
+      },
+    });
+    updateAppConfigThemeFile('currentTheme', theme);
+  };
 }
 
 /**
  * @description 初始化读取主题配置文件
  */
 function useInitThemeConfig() {
-    const selectTheme = useSelectTheme();
-    const readAppConfigThemeFile = useReadAppConfigThemeFile();
-    return () => {
-        readAppConfigThemeFile().then((value: { [key: string]: any }) => {
-            selectTheme(value);
-        });
-    };
+  const selectTheme = useSelectTheme();
+  const readAppConfigThemeFile = useReadAppConfigThemeFile();
+  return () => {
+    readAppConfigThemeFile().then((value: { [key: string]: any }) => {
+      selectTheme(value);
+    });
+  };
 }
 
 /**
  * @description 对比上一轮的选中的主题皮肤
  */
 function useSelectTheme() {
-    const dispatch = useDispatch();
-    return (themeConfigValues: any) => {
-        const prevTheme: string = themeConfigValues?.currentTheme || '';
-        const initTheme = { id: 'dark', fontColor: '#ffffff', backgroundColor: '#27292c' };
+  const dispatch = useDispatch();
+  return (themeConfigValues: any) => {
+    const prevTheme: string = themeConfigValues?.currentTheme || '';
+    const initTheme = { id: 'dark', fontColor: '#ffffff', backgroundColor: '#27292c' };
 
-        let nextTheme: TSTheme.Item;
-        if (themeConfigValues?.themeList.length > 0) {
-            if (prevTheme) nextTheme = _.find(themeConfigValues?.themeList, { id: prevTheme }) || initTheme;
-            else nextTheme = themeConfigValues?.themeList[0];
-        } else {
-            nextTheme = initTheme;
-        }
-        dispatch({
-            type: 'themeModel/setStoreList',
-            payload: [
-                {
-                    key: 'currentTheme',
-                    values: nextTheme,
-                },
-                {
-                    key: 'themeList',
-                    values: themeConfigValues?.themeList,
-                },
-            ],
-        });
-    };
+    let nextTheme: TSTheme.Item;
+    if (themeConfigValues?.themeList.length > 0) {
+      if (prevTheme) nextTheme = _.find(themeConfigValues?.themeList, { id: prevTheme }) || initTheme;
+      else nextTheme = themeConfigValues?.themeList[0];
+    } else {
+      nextTheme = initTheme;
+    }
+    dispatch({
+      type: 'themeModel/setStoreList',
+      payload: [
+        {
+          key: 'currentTheme',
+          values: nextTheme,
+        },
+        {
+          key: 'themeList',
+          values: themeConfigValues?.themeList,
+        },
+      ],
+    });
+  };
 }
 
 /**
  * @description 读取配置文件的内容
  */
 function useReadAppConfigThemeFile() {
-    return () => {
-        return new Promise((resolve: (values: { [key: string]: any }) => void, reject: (value: Error) => void) => {
-            getAppPath().then((appPath: string) => {
-                const jsonPath = path.join(appPath, 'appConfig/theme.config.json');
-                fileAction
-                    .hasFile(jsonPath)
-                    .then(async () => {
-                        const themeConfigValues = await fileAction.read(jsonPath, 'utf-8');
-                        resolve(JSON.parse(themeConfigValues));
-                    })
-                    .catch(() => {
-                        reject(new Error('appConfig does not exist !'));
-                    });
-            });
-        });
-    };
+  return () => {
+    return new Promise((resolve: (values: { [key: string]: any }) => void, reject: (value: Error) => void) => {
+      getAppPath().then((appPath: string) => {
+        const jsonPath = path.join(appPath, 'appConfig/theme.config.json');
+        fileAction
+          .hasFile(jsonPath)
+          .then(async () => {
+            const themeConfigValues = await fileAction.read(jsonPath, 'utf-8');
+            resolve(JSON.parse(themeConfigValues));
+          })
+          .catch(() => {
+            reject(new Error('appConfig does not exist !'));
+          });
+      });
+    });
+  };
 }
 
 /**
@@ -114,28 +114,28 @@ function useReadAppConfigThemeFile() {
  * @param {function} callback 回调函数
  */
 function useUpdateAppConfigThemeFile() {
-    const readAppConfigThemeFile = useReadAppConfigThemeFile();
-    return (updateKey: string, updateValues: any, callback?: () => void) => {
-        getAppPath().then((appPath: string) => {
-            const jsonPath = path.join(appPath, 'appConfig/theme.config.json');
-            readAppConfigThemeFile().then((values: { [key: string]: any }) => {
-                if (values && !!Object.keys(values).length) {
-                    const nextConfigContent = {
-                        ...values,
-                        [`${updateKey}`]: updateValues,
-                    };
-                    fileAction.canWrite(jsonPath).then(() => {
-                        fileAction.write(jsonPath, nextConfigContent, 'utf-8').then(() => {
-                            callback && callback();
-                        });
-                    });
-                }
+  const readAppConfigThemeFile = useReadAppConfigThemeFile();
+  return (updateKey: string, updateValues: any, callback?: () => void) => {
+    getAppPath().then((appPath: string) => {
+      const jsonPath = path.join(appPath, 'appConfig/theme.config.json');
+      readAppConfigThemeFile().then((values: { [key: string]: any }) => {
+        if (values && !!Object.keys(values).length) {
+          const nextConfigContent = {
+            ...values,
+            [`${updateKey}`]: updateValues,
+          };
+          fileAction.canWrite(jsonPath).then(() => {
+            fileAction.write(jsonPath, nextConfigContent, 'utf-8').then(() => {
+              callback && callback();
             });
-        });
-    };
+          });
+        }
+      });
+    });
+  };
 }
 
 export default {
-    useGetCurrentTheme,
-    useInitThemeConfig,
+  useGetCurrentTheme,
+  useInitThemeConfig,
 };

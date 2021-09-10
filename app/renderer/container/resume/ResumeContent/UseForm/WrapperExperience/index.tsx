@@ -5,7 +5,7 @@ import Right from './Right';
 import Menu from './Right/Menu';
 import { onAddExperience, onDeleteExperience } from './utils';
 import { AdapterExperienceType } from './adapter';
-import RsmModal from '@common/components/RsmModal';
+import MyModal from '@common/components/MyModal';
 
 interface IProps {
   dataList: any[];
@@ -197,7 +197,7 @@ function WrapperExperience({ children, dataList, updateDataList }: IProps) {
         )}
       </div>
       {deleteModal.show && (
-        <RsmModal.Confirm
+        <MyModal.Confirm
           title="确定删除条目吗？"
           description="删除后将无法恢复哦～"
           config={{
@@ -213,7 +213,7 @@ function WrapperExperience({ children, dataList, updateDataList }: IProps) {
         />
       )}
       {editModal.showByCancel && (
-        <RsmModal.Confirm
+        <MyModal.Confirm
           title="你确定放弃编辑的笔记内容？"
           description="放弃后将无法恢复哦～"
           config={{

@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import './index.less';
-import RsmModal from '@common/components/RsmModal';
-import RsmInput from '@common/components/RsmInput';
+import MyModal from '@common/components/MyModal';
+import MyInput from '@common/components/MyInput';
 import { useSelector } from 'react-redux';
 import useUpdateResumeHook from '@src/container/resume/ResumeContent/useUpdateResumeHook';
 
@@ -16,7 +16,7 @@ function Education({ onClose }: IProps) {
   const base: TSResume.Base = useSelector((state: any) => state.resumeModel.base);
 
   return (
-    <RsmModal.Dialog
+    <MyModal.Dialog
       title="教育信息"
       showFooter={false}
       config={{
@@ -31,7 +31,7 @@ function Education({ onClose }: IProps) {
             <span styleName="require">*</span>学 校 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               onChange={(e) => {
                 updateResumeHook('base/school', e.target?.value || '');
               }}
@@ -46,7 +46,7 @@ function Education({ onClose }: IProps) {
             <span styleName="require">*</span>专 业 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               onChange={(e) => {
                 updateResumeHook('base/major', e.target?.value || '');
               }}
@@ -61,7 +61,7 @@ function Education({ onClose }: IProps) {
             <span styleName="require">*</span>学 位 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               onChange={(e) => {
                 updateResumeHook('base/degree', e.target?.value || '');
               }}
@@ -76,7 +76,7 @@ function Education({ onClose }: IProps) {
             <span styleName="require">*</span>学 年 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               onChange={(e) => {
                 const nextTime = {
                   ...base?.onSchoolTime,
@@ -90,7 +90,7 @@ function Education({ onClose }: IProps) {
               style={{ width: 300 }}
             />
             <span styleName="line">-</span>
-            <RsmInput
+            <MyInput
               onChange={(e) => {
                 const nextTime = {
                   ...base?.onSchoolTime,
@@ -106,7 +106,7 @@ function Education({ onClose }: IProps) {
           </div>
         </div>
       </div>
-    </RsmModal.Dialog>
+    </MyModal.Dialog>
   );
 }
 

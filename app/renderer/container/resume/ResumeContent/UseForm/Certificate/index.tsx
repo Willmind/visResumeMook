@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import './index.less';
-import RsmModal from '@common/components/RsmModal';
-import RsmInput from '@common/components/RsmInput';
+import MyModal from '@common/components/MyModal';
+import MyInput from '@common/components/MyInput';
 import { useSelector } from 'react-redux';
 import useUpdateResumeHook from '@src/container/resume/ResumeContent/useUpdateResumeHook';
 
@@ -17,7 +17,7 @@ function Certificate({ onClose }: IProps) {
   const certificate: string = useSelector((state: any) => state.resumeModel.certificate);
 
   return (
-    <RsmModal.Dialog
+    <MyModal.Dialog
       title="荣誉证书"
       showFooter={false}
       config={{
@@ -32,7 +32,7 @@ function Certificate({ onClose }: IProps) {
             <span styleName="require">*</span>证 书 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               type="textarea"
               onChange={(e) => {
                 updateResumeHook<string>('certificate', e.target.value);
@@ -46,7 +46,7 @@ function Certificate({ onClose }: IProps) {
           </div>
         </div>
       </div>
-    </RsmModal.Dialog>
+    </MyModal.Dialog>
   );
 }
 

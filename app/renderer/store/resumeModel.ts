@@ -4,22 +4,22 @@ const resumeModel: TSRcReduxModel.Props<TSResume.IntactResume> = {
   state: {
     base: {
       avatar: '',
-      username: '谭志锦',
-      area: '广东·佛山',
-      school: '江西理工大学',
-      major: '电子信息工程',
+      username: '彭道宽',
+      area: '海南·海口',
+      school: '湖南瞎说大学',
+      major: '软件工程',
       degree: '本科',
-      hometown: '广东',
+      hometown: '海南',
       onSchoolTime: {
-        beginTime: '2016.09',
-        endTime: '2020.06',
+        beginTime: '2015.09',
+        endTime: '2019.06',
       },
     },
     contact: {
-      phone: '13126476635',
-      email: 'tanzhijingege@126.com',
-      // github: 'https://github.com/PDKSophia',
-      // juejin: 'https://juejin.cn/user/1838039171075352',
+      phone: '176****2612',
+      email: '1063137960@qq.com',
+      github: 'https://github.com/PDKSophia',
+      juejin: 'https://juejin.cn/user/1838039171075352',
     },
     work: {
       job: '前端工程师',
@@ -62,6 +62,7 @@ const resumeModel: TSRcReduxModel.Props<TSResume.IntactResume> = {
           '计划、组织、协调各年级学生组织的文艺和文化娱乐活动',
           '承办好学生会部的学生文艺晚会。有效地与社团部开展合作项目',
         ],
+        date: 1621145137865,
       },
     ],
     workExperience: [
@@ -76,6 +77,7 @@ const resumeModel: TSRcReduxModel.Props<TSResume.IntactResume> = {
           '担任TickNet工作室前端工程师，与湖南瞎说大学网络中心合作，围绕微信企业号开发或主导多个应用',
           '任职期间基于微信企业号开发校内闲余市场，采用Vue.js主导开发，并与湖南xxx科技有限公司合作，主导开发该公司官网及后台管理',
         ],
+        date: 1621145137865,
       },
     ],
     projectExperience: [

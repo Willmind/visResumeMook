@@ -2,7 +2,7 @@
  * @description 工作经历Form
  */
 import React from 'react';
-import RsmModal from '@common/components/RsmModal';
+import MyModal from '@common/components/MyModal';
 import Form from './Form';
 import { useSelector } from 'react-redux';
 import Wrapper from '../WrapperExperience';
@@ -20,7 +20,7 @@ function WorkExperience({ onClose }: IProps) {
   };
 
   return (
-    <RsmModal.Dialog
+    <MyModal.Dialog
       title="工作经历"
       showFooter={false}
       config={{
@@ -34,7 +34,7 @@ function WorkExperience({ onClose }: IProps) {
       <Wrapper dataList={AdapterExperience.work(workExperience)} updateDataList={updateDataList}>
         <Form />
       </Wrapper>
-    </RsmModal.Dialog>
+    </MyModal.Dialog>
   );
 }
 

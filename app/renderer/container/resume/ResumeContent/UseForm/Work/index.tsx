@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import './index.less';
-import RsmModal from '@common/components/RsmModal';
-import RsmInput from '@common/components/RsmInput';
+import MyModal from '@common/components/MyModal';
+import MyInput from '@common/components/MyInput';
 import { useSelector } from 'react-redux';
 import useUpdateResumeHook from '@src/container/resume/ResumeContent/useUpdateResumeHook';
 
@@ -16,7 +16,7 @@ function Work({ onClose }: IProps) {
   const work: TSResume.Work = useSelector((state: any) => state.resumeModel.work);
 
   return (
-    <RsmModal.Dialog
+    <MyModal.Dialog
       title="工作期望"
       showFooter={false}
       config={{
@@ -31,7 +31,7 @@ function Work({ onClose }: IProps) {
             <span styleName="require">*</span>职 位 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               onChange={(e) => {
                 updateResumeHook<string>('work/job', e.target.value);
               }}
@@ -46,7 +46,7 @@ function Work({ onClose }: IProps) {
             <span styleName="require">*</span>城 市 ：
           </div>
           <div styleName="right">
-            <RsmInput
+            <MyInput
               onChange={(e) => {
                 updateResumeHook<string>('work/city', e.target.value);
               }}
@@ -58,7 +58,7 @@ function Work({ onClose }: IProps) {
           </div>
         </div>
       </div>
-    </RsmModal.Dialog>
+    </MyModal.Dialog>
   );
 }
 

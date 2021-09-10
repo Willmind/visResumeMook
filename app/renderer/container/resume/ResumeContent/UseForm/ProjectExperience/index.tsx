@@ -2,7 +2,7 @@
  * @description 项目经验Form
  */
 import React from 'react';
-import RsmModal from '@common/components/RsmModal';
+import MyModal from '@common/components/MyModal';
 import Form from './Form';
 import { useSelector } from 'react-redux';
 import Wrapper from '../WrapperExperience';
@@ -23,7 +23,7 @@ function ProjectExperience({ onClose }: IProps) {
   };
 
   return (
-    <RsmModal.Dialog
+    <MyModal.Dialog
       title="项目经验"
       showFooter={false}
       config={{
@@ -37,7 +37,7 @@ function ProjectExperience({ onClose }: IProps) {
       <Wrapper dataList={AdapterExperience.project(projectExperience)} updateDataList={updateDataList}>
         <Form />
       </Wrapper>
-    </RsmModal.Dialog>
+    </MyModal.Dialog>
   );
 }
 
