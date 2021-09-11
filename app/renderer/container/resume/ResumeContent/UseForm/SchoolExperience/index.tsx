@@ -2,7 +2,7 @@
  * @description 在校经历Form
  */
 import React from 'react';
-import MyModal from '@common/components/MyModal';
+import RsmModal from '@common/components/RsmModal';
 import Form from './Form';
 import { useSelector } from 'react-redux';
 import Wrapper from '../WrapperExperience';
@@ -21,7 +21,7 @@ function SchoolExperience({ onClose }: IProps) {
   };
 
   return (
-    <MyModal.Dialog
+    <RsmModal.Dialog
       title="在校经历"
       showFooter={false}
       config={{
@@ -35,7 +35,7 @@ function SchoolExperience({ onClose }: IProps) {
       <Wrapper dataList={AdapterExperience.school(schoolExperience)} updateDataList={updateDataList}>
         <Form />
       </Wrapper>
-    </MyModal.Dialog>
+    </RsmModal.Dialog>
   );
 }
 

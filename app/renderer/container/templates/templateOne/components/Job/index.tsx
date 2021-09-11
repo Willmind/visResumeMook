@@ -1,6 +1,6 @@
 /**
  * @desc 求职意向
- * @author pengdaokuan
+ * @author tanzhijin
  */
 import React from 'react';
 import '../../../styles/template-one.less';

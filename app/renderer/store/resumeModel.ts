@@ -4,29 +4,28 @@ const resumeModel: TSRcReduxModel.Props<TSResume.IntactResume> = {
   state: {
     base: {
       avatar: '',
-      username: '彭道宽',
-      area: '海南·海口',
-      school: '湖南瞎说大学',
-      major: '软件工程',
+      username: '谭志锦',
+      area: '广东·广州',
+      school: '江西理工大学',
+      major: '电子信息工程',
       degree: '本科',
-      hometown: '海南',
+      hometown: '广东',
       onSchoolTime: {
-        beginTime: '2015.09',
-        endTime: '2019.06',
+        beginTime: '2016.09',
+        endTime: '2020.06',
       },
     },
     contact: {
-      phone: '176****2612',
-      email: '1063137960@qq.com',
-      github: 'https://github.com/PDKSophia',
-      juejin: 'https://juejin.cn/user/1838039171075352',
+      phone: '13126476635',
+      email: 'tanzhijingege@126.com',
+      github: 'https://github.com/Willminda',
     },
     work: {
       job: '前端工程师',
-      city: '广州｜成都｜海口',
-      cityList: ['广州', '成都', '海口'],
+      city: '广州',
+      cityList: ['广州'],
     },
-    hobby: '篮球、爬山、健身、吉他、街舞',
+    hobby: '健身、模型',
     skill:
       '熟悉 Vue.js，了解数据双向绑定原理、阅读过 NextTick 源码｜熟悉 React，了解并使用 Hooks 特性，阅读过 redux 源码，开发 rc-redux-model 中间件｜阅读过 Antd 部分优秀组件源码，并参考借鉴，开发组内 UI 组件库｜了解 Vscode，开发组内项目辅助工具 vscode-beehive-extension 插件｜了解 Webpack 编译原理，了解 babel 转码原理，编写过 babel 插件｜了解 Electron，了解 Node.js 以及 Git 团队协作开发工具｜了解设计模式，对于特定场景，能采用合适的设计模式进行解决｜了解 MYSQL，了解数据库优化常用方法｜了解基于微信公众号应用开发，采用 Taro 开发微信小程序，具备良好的网络基础知识',
     skillList: [

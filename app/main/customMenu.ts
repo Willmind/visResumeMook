@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { MyBrowserWindow } from './electron';
+import { RsmBrowserWindow } from './electron';
 import {
     MenuItemConstructorOptions,
     shell,
@@ -135,7 +135,7 @@ const customMenu: (MenuItemConstructorOptions | MenuItem)[] = [
             {
                 label: '修改简历数据储存路径',
                 click: () => {
-                    const wins: MyBrowserWindow[] = BrowserWindow.getAllWindows();
+                    const wins: RsmBrowserWindow[] = BrowserWindow.getAllWindows();
                     const currentWindow = _.find(wins, (w) => w.uid === 'settingWindow');
                     if (currentWindow) {
                         if (!currentWindow.isVisible()) {

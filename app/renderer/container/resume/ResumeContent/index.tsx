@@ -1,14 +1,14 @@
 /*
  * @Description:
- * @Author: pengdaokuan
- * @LastEditors: pengdaokuan
+ * @Author: tanzhijin
+ * @LastEditors: tanzhijin
  * @Date: 2021-06-25 08:56:12
  * @LastEditTime: 2021-07-10 19:30:31
  */
 import React, { useEffect, useState } from 'react';
 import * as UseTemplateList from './UseTemplate';
 import { useParams } from 'react-router';
-import MyScrollBox from '@common/components/MyScrollBox';
+import RsmScrollBox from '@common/components/RsmScrollBox';
 import Messager, { MESSAGE_EVENT_NAME_MAPS } from '@common/messager';
 import { RESUME_TOOLBAR_MAPS } from '@common/constants/resume';
 import CertificateForm from './UseForm/Certificate';
@@ -55,7 +55,7 @@ function ResumeContent() {
   };
 
   return (
-    <MyScrollBox maxHeight={height - HEADER_ACTION_HEIGHT}>
+    <RsmScrollBox maxHeight={height - HEADER_ACTION_HEIGHT}>
       {routerParams?.templateId && Number(routerParams?.templateIndex) === 0 && <UseTemplateList.TemplateOne />}
       {showFormModal && (
         <>
@@ -71,7 +71,7 @@ function ResumeContent() {
           {formName === RESUME_TOOLBAR_MAPS.workExperience && <WorkExperience onClose={onClose} />}
         </>
       )}
-    </MyScrollBox>
+    </RsmScrollBox>
   );
 }
 export default ResumeContent;

@@ -1,15 +1,15 @@
 /*
  * @Description: 模版列表侧边栏
- * @Author: pengdaokuan
- * @LastEditors: pengdaokuan
+ * @Author: tanzhijin
+ * @LastEditors: tanzhijin
  * @Date: 2021-06-25 08:56:12
  * @LastEditTime: 2021-07-08 09:42:17
  */
 import React from 'react';
 import './index.less';
 import UseIcon from '@assets/icon/use.png';
-import MyScrollBox from '@common/components/MyScrollBox';
-import MyButton from '@common/components/MyButton';
+import RsmScrollBox from '@common/components/RsmScrollBox';
+import RsmButton from '@common/components/RsmButton';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Navigation() {
@@ -30,7 +30,7 @@ function Navigation() {
   };
   return (
     <div styleName="navigation">
-      <MyScrollBox maxHeight={height - HEADER_HEIGHT}>
+      <RsmScrollBox maxHeight={height - HEADER_HEIGHT}>
         {templateList &&
           templateList.length > 0 &&
           templateList.map((template: TSTemplate.Item) => {
@@ -40,15 +40,15 @@ function Navigation() {
                 <div styleName="mask">
                   {selectTemplate?.templateId === template?.templateId && <img styleName="use" src={UseIcon} />}
                   {selectTemplate?.templateId !== template?.templateId && (
-                    <MyButton size="middle" className="view-btn" onClick={() => onSelect(template)}>
+                    <RsmButton size="middle" className="view-btn" onClick={() => onSelect(template)}>
                       预览模版
-                    </MyButton>
+                    </RsmButton>
                   )}
                 </div>
               </div>
             );
           })}
-      </MyScrollBox>
+      </RsmScrollBox>
     </div>
   );
 }

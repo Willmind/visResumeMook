@@ -1,7 +1,7 @@
 /*
  * @Description:
- * @Author: pengdaokuan
- * @LastEditors: pengdaokuan
+ * @Author: tanzhijin
+ * @LastEditors: tanzhijin
  * @Date: 2021-06-25 08:56:12
  * @LastEditTime: 2021-07-10 18:08:48
  */
@@ -11,7 +11,7 @@ import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
 import { ROUTER_KEY } from '@common/constants/router';
 import { compilePath } from '@common/utils/router';
-import MyButton from '@common/components/MyButton';
+import RsmButton from '@common/components/RsmButton';
 import ROUTER from '@common/constants/router';
 
 function Footer() {
@@ -29,9 +29,9 @@ function Footer() {
   };
   return (
     <div styleName="footer">
-      <MyButton size="middle" className="use-btn" onClick={onMadeResume}>
+      <RsmButton size="middle" className="use-btn" onClick={onMadeResume}>
         以此模版前往制作简历
-      </MyButton>
+      </RsmButton>
     </div>
   );
 }

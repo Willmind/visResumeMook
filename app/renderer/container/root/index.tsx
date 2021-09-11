@@ -1,7 +1,7 @@
 /*
  * @Description:
- * @Author: pengdaokuan
- * @LastEditors: pengdaokuan
+ * @Author: tanzhijin
+ * @LastEditors: tanzhijin
  * @Date: 2021-06-25 08:56:12
  * @LastEditTime: 2021-07-10 18:05:23
  */
@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 import { ROUTER_ENTRY, ROUTER_KEY } from '@common/constants/router';
 import { compilePath, isHttpOrHttpsUrl } from '@common/utils/router';
 import Logo from '@assets/logo.png';
-import MyTheme from '@common/components/MyTheme';
+import RsmTheme from '@common/components/RsmTheme';
 import useThemeActionHooks from '@src/hooks/useThemeActionHooks';
 
 function Root() {
@@ -45,7 +45,7 @@ function Root() {
         <div styleName="title">VisResumeMook</div>
         <div styleName="tips">一个模板简历制作平台, 让你的简历更加出众 ~</div>
         <div styleName="theme">
-          <MyTheme />
+          <RsmTheme />
         </div>
         <div styleName="action">
           {ROUTER_ENTRY.map((router: TSRouter.Item) => {
@@ -65,7 +65,7 @@ function Root() {
         <div styleName="copyright">
           <div styleName="footer">
             <p styleName="copyright">
-              Copyright © 2018-{new Date().getFullYear()} All Rights Reserved. Copyright By pengdaokuan
+              Copyright © 2018-{new Date().getFullYear()} All Rights Reserved. Copyright By tanzhijin
             </p>
           </div>
         </div>

@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import './index.less';
-import MyModal from '@common/components/MyModal';
-import MyInput from '@common/components/MyInput';
+import RsmModal from '@common/components/RsmModal';
+import RsmInput from '@common/components/RsmInput';
 import { useSelector } from 'react-redux';
 import RecommendSkill, { IRecommendSkill } from '@common/constants/skill';
 import useUpdateResumeHook from '@src/container/resume/ResumeContent/useUpdateResumeHook';
@@ -17,7 +17,7 @@ function Skill({ onClose }: IProps) {
   const skill: string = useSelector((state: any) => state.resumeModel.skill);
 
   return (
-    <MyModal.Dialog
+    <RsmModal.Dialog
       title="个人信息"
       showFooter={false}
       config={{
@@ -56,7 +56,7 @@ function Skill({ onClose }: IProps) {
                 );
               })}
             </div>
-            <MyInput
+            <RsmInput
               type="textarea"
               onChange={(e) => {
                 updateResumeHook<string>('skill', e.target.value);
@@ -70,7 +70,7 @@ function Skill({ onClose }: IProps) {
           </div>
         </div>
       </div>
-    </MyModal.Dialog>
+    </RsmModal.Dialog>
   );
 }
 

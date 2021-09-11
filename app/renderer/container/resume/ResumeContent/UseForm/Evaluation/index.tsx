@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import './index.less';
-import MyModal from '@common/components/MyModal';
-import MyInput from '@common/components/MyInput';
+import RsmModal from '@common/components/RsmModal';
+import RsmInput from '@common/components/RsmInput';
 import { useSelector } from 'react-redux';
 import useUpdateResumeHook from '@src/container/resume/ResumeContent/useUpdateResumeHook';
 
@@ -17,7 +17,7 @@ function Evaluation({ onClose }: IProps) {
   const evaluation: string = useSelector((state: any) => state.resumeModel.evaluation);
 
   return (
-    <MyModal.Dialog
+    <RsmModal.Dialog
       title="个人评价"
       showFooter={false}
       config={{
@@ -32,7 +32,7 @@ function Evaluation({ onClose }: IProps) {
             <span styleName="require">*</span>评 价 ：
           </div>
           <div styleName="right">
-            <MyInput
+            <RsmInput
               type="textarea"
               onChange={(e) => {
                 updateResumeHook<string>('evaluation', e.target.value);
@@ -46,7 +46,7 @@ function Evaluation({ onClose }: IProps) {
           </div>
         </div>
       </div>
-    </MyModal.Dialog>
+    </RsmModal.Dialog>
   );
 }
 

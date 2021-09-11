@@ -1,7 +1,7 @@
 /*
  * @Description:
- * @Author: pengdaokuan
- * @LastEditors: pengdaokuan
+ * @Author: tanzhijin
+ * @LastEditors: tanzhijin
  * @Date: 2021-07-08 09:30:24
  * @LastEditTime: 2021-07-22 11:59:08
  */
@@ -11,11 +11,11 @@
 import React from 'react';
 import './index.less';
 import { useHistory, useParams } from 'react-router';
-import MyButton from '@common/components/MyButton';
+import RsmButton from '@common/components/RsmButton';
 import { toPrintPdf } from '@common/utils/htmlToPdf';
 import { useSelector } from 'react-redux';
 import fileAction from '@common/utils/file';
-import MyModal from '@common/components/MyModal';
+import RsmModal from '@common/components/RsmModal';
 import { createUID } from '@common/utils';
 import { compilePath } from '@common/utils/router';
 import ROUTER, { ROUTER_KEY } from '@common/constants/router';
@@ -88,11 +88,11 @@ function ResumeAction() {
       <div styleName="back" onClick={onBack}>
         返回
       </div>
-      <MyButton size="middle" className="export-btn" onClick={() => setComponentVisible(true)}>
+      <RsmButton size="middle" className="export-btn" onClick={() => setComponentVisible(true)}>
         导出PDF
-      </MyButton>
+      </RsmButton>
       {componentVisible && (
-        <MyModal.Confirm
+        <RsmModal.Confirm
           eleRef={ref}
           title="确定要打印简历吗？"
           description="请确保信息的正确，目前仅支持单页打印哦～"

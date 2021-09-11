@@ -5,7 +5,7 @@ import path from 'path';
 import customMenu from './customMenu';
 import { app, BrowserWindow, ipcMain, dialog, Menu } from 'electron';
 
-export interface MyBrowserWindow extends BrowserWindow {
+export interface RsmBrowserWindow extends BrowserWindow {
   uid?: string;
 }
 function isDev() {
@@ -15,7 +15,7 @@ function isDev() {
 
 function createWindow() {
   // 创建主应用窗口
-  const mainWindow: MyBrowserWindow = new BrowserWindow({
+  const mainWindow: RsmBrowserWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     webPreferences: {
@@ -26,7 +26,7 @@ function createWindow() {
   mainWindow.uid = 'mainWindow';
 
   // 创建应用设置窗口
-  const settingWindow: MyBrowserWindow = new BrowserWindow({
+  const settingWindow: RsmBrowserWindow = new BrowserWindow({
     width: 720,
     height: 240,
     resizable: false,

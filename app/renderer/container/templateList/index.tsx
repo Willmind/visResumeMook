@@ -1,7 +1,7 @@
 /*
  * @Description:
- * @Author: pengdaokuan
- * @LastEditors: pengdaokuan
+ * @Author: tanzhijin
+ * @LastEditors: tanzhijin
  * @Date: 2021-06-25 08:56:12
  * @LastEditTime: 2021-06-25 10:36:25
  */
@@ -10,21 +10,21 @@ import './index.less';
 import Header from './Header';
 import Navigation from './Navigation';
 import StaticResume from './StaticResume';
-import MyRectSize from '@common/components/MyRectSize';
+import RsmRectSize from '@common/components/RsmRectSize';
 
 function TemplateList() {
   return (
     <div styleName="container">
       <Header />
       <div styleName="content">
-        <MyRectSize>
-          <MyRectSize.Left>
+        <RsmRectSize>
+          <RsmRectSize.Left>
             <Navigation />
-          </MyRectSize.Left>
-          <MyRectSize.Right>
+          </RsmRectSize.Left>
+          <RsmRectSize.Right>
             <StaticResume />
-          </MyRectSize.Right>
-        </MyRectSize>
+          </RsmRectSize.Right>
+        </RsmRectSize>
       </div>
     </div>
   );

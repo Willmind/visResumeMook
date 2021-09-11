@@ -1,7 +1,7 @@
 /*
  * @Description:全局配置表
- * @Author: pengdaokuan
- * @LastEditors: pengdaokuan
+ * @Author: tanzhijin
+ * @LastEditors: tanzhijin
  * @Date: 2021-07-01 11:07:04
  * @LastEditTime: 2021-07-01 11:10:31
  */

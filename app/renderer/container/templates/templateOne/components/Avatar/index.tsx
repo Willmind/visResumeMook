@@ -1,6 +1,6 @@
 /**
  * @desc 头像
- * @author pengdaokuan
+ * @author tanzhijin
  */
 import React from 'react';
 import './index.less';
