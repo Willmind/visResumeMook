@@ -12,6 +12,13 @@ import { getAppPath } from '@common/utils/appPath';
 import { useReadGlobalConfigFile, useUpdateGlobalConfigFile } from '@src/hooks/useGlobalConfigActionHooks';
 
 function Setting() {
+
+  const onHideWindow = () => {
+    ipcRenderer.send('Electron:SettingWindow-hide-event');
+  };
+  const onMinWindow = () => {
+    ipcRenderer.send('Electron:SettingWindow-min-event');
+  };
   const [resumeSavePath, setResumeSavePath] = useState('');
   const readAppConfigThemeFile = useReadGlobalConfigFile();
   const updateGlobalConfigFile = useUpdateGlobalConfigFile();
@@ -44,16 +51,25 @@ function Setting() {
     });
   };
   return (
-    <div styleName="container">
-      <p styleName="label">修改简历数据储存路径</p>
-      <div styleName="input">
-        <div styleName="value">{resumeSavePath || '当前存储路径为：'}</div>
-        <div styleName="update-btn" onClick={onChangePath}>
-          更改路径
+      <div styleName="container">
+        <div styleName="menu">
+          <div styleName="hide" onClick={onHideWindow}>
+            x
+          </div>
+          <div styleName="min" onClick={onMinWindow}>
+            -
+          </div>
         </div>
-      </div>
-    </div>
-  );
+        <div styleName="content">
+          <p styleName="label">修改简历数据储存路径</p>
+          <div styleName="input">
+            <div styleName="value">{resumeSavePath || '当前存储路径为：'}</div>
+            <div styleName="update-btn" onClick={onChangePath}>
+              更改路径
+            </div>
+          </div>
+        </div>
+      </div>  );
 }
 
 export default Setting;
