@@ -15,24 +15,24 @@ function Project() {
         <li styleName="flex">
           <div styleName="left">
             <p>
-              <span>2021.03 - 2021.05</span>
+              <span>2021.08 - 2021.09</span>
             </p>
           </div>
           <div styleName="right">
             <p>
-              <span>visResumeMook 可视化简历平台 -前端工程师</span>
+              <span>Egg + React 全栈开发记账本</span>
             </p>
           </div>
           <div styleName="text">
             <ul styleName="item-box">
               <li styleName="item-content">
-                <span>Electron + React Hooks 打造简历平台，只需输入一次信息，套用多份模版</span>
+                <span>Egg + React 全栈开发打造记账本</span>
               </li>
               <li styleName="item-content">
-                <span>通过 jsonfile 方式实现主题换肤，支持导出 PDF 简历文档</span>
+                <span>使用最新的vite 2.0脚手架搭建，全程使用 React Hook形式编写</span>
               </li>
               <li styleName="item-content">
-                <span>通过可视化拖拽形式，自定义组件模版</span>
+                <span>通过egg.js,基于koa架构开发，连接MySQL数据做到前端后端联调</span>
               </li>
             </ul>
           </div>

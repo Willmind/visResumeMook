@@ -16,13 +16,7 @@ const customMenu: (MenuItemConstructorOptions | MenuItem)[] = [
             {
                 label: '源码',
                 click: function () {
-                    shell.openExternal('https://github.com/PDKSophia/visResumeMook');
-                },
-            },
-            {
-                label: '小册',
-                click: function () {
-                    shell.openExternal('https://juejin.cn/book/6950646725295996940');
+                    shell.openExternal('https://github.com/Willmind/visResumeMook');
                 },
             },
         ],

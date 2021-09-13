@@ -10,8 +10,8 @@ function Contact() {
     <div styleName="container">
       <p styleName="title">联系方式 Contact</p>
       <ul styleName="content">
-        <li>电话：176****2612</li>
-        <li>邮箱：1063137960@qq.com</li>
+        <li>电话：131****6635</li>
+        <li>邮箱：tanzhijingege@126.com</li>
       </ul>
     </div>
   );

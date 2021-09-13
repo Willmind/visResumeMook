@@ -16,8 +16,8 @@ function Work() {
             <p>前端工程师</p>
           </div>
           <div styleName="right">
-            <p>CVTE</p>
-            <p>就职于CVTE，部门人送广州彭于晏，其他的没啥介绍了</p>
+            <p>南方数码</p>
+            <p>智慧住建开发部</p>
           </div>
         </li>
       </ul>

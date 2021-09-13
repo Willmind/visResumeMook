@@ -12,8 +12,8 @@ function Post() {
       <ul styleName="list">
         <li styleName="flex">
           <div styleName="left">
-            <p>2016.09-2017.09</p>
-            <p>文艺部会长</p>
+            <p>2018.09-2019.09</p>
+            <p>团支书</p>
           </div>
           <div styleName="right">
             <p>校团委学生会</p>
@@ -25,12 +25,12 @@ function Post() {
         <li styleName="flex">
           <div styleName="left">
             <p>2017.09-2019.04</p>
-            <p>前端工程师</p>
+            <p>滑板协会会长</p>
           </div>
           <div styleName="right">
-            <p>湖南瞎说大学网络中心</p>
+            <p>江西理工大学滑板社</p>
             <p>
-              担任TickNet工作室前端工程师，与湖南瞎说大学网络中心合作，围绕微信企业号开发或主导多个应用，任职期间基于微信企业号开发校内闲余市场，采用Vue.js主导开发，并与湖南xxx科技有限公司合作，主导开发该公司官网及后台管理
+              统筹组织校内外各种滑板活动
             </p>
           </div>
         </li>

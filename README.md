@@ -1,60 +1,142 @@
-## Electron + React Hooks + TS 实战开发：从 0 到 1 实现简历平台
+## Electron + React Hooks + TS 实现简历平台
 
 ### 开发
 
 > 由于网络问题，往往安装 Electron 会很慢，此时可以考虑换个淘宝源
 
 ```js
-// 1.下载
-npm run install
+// 1.安装依赖
+cnpm run install
 // 2. 运行
-npm run start:render
-npm run start:main
+npm run start:render //首先运行渲染线程 (react)，当出现Compiled successfully的时候执行下一步
+npm run start:main //然后运行主线程 (Electron)
+运行成功以后系统会自动弹出Electron应用程序
 ```
 
-### 更多分支
+### 项目结构树
+```js
+├── app
+│   ├── main  // 主进程模块
+│   │   ├── customMenu.ts  //顶部编辑栏设置
+│   │   └── electron.ts  //主进程脚本，该脚本就是应用程序的入口
+│   └── renderer  // 渲染进程模块
+│       ├── app.tsx  //入口文件
+│       ├── common //公共
+│       │   ├── components  //公用组件
+│       │   │   ├── RsmButton  //按钮
+│       │   │   ├── RsmEmpty   //空状态
+│       │   │   ├── RsmInput   //输入框
+│       │   │   ├── RsmModal   //Modal弹框
+│       │   │   ├── RsmRectSize  
+│       │   │   ├── RsmScrollBox  //固定区域内的滚动组件
+│       │   │   ├── RsmTheme  //主题皮肤
+│       │   │   └── RsmUpload  //上传
+│       │   ├── constants   //默认约定字段文件夹
+│       │   ├── hook
+│       │   │   └── useClickAway.ts //简历选择工具-选中模块监听
+│       │   ├── messager
+│       │   │   └── index.ts
+│       │   ├── types  //类型约束
+│       │   └── utils  //常用工具处理函数
+│       ├── container  //存放着所有模块的代码文件
+│       │   ├── resume  //简历页面
+│       │   │   ├── ResumeAction //制作简历-操作区
+│       │   │   ├── ResumeContent  //制作简历-内容区
+│       │   │   ├── ResumeToolbar  //制作简历-工具栏
+│       │   ├── root  //首页
+│       │   ├── templateList  //模版列表
+│       │   │   ├── Footer  //模版列表-尾部
+│       │   │   ├── Header  //模版列表-头部
+│       │   │   ├── Navigation  //模版列表-侧边栏
+│       │   │   ├── StaticResume  //模版列表-静态模版
+│       │   └── templates  //模版事例
+│       ├── global.d.ts
+│       ├── hooks //自定义钩子函数
+│       ├── index.html  //入口html文件
+│       ├── router.tsx  //路由入口文件
+│       ├── store  //存放着所有 redux model 相关的代码文件
+│       └── windowPages  
+│           └── setting
+├── appConfig   //配置表
+│   ├── global.config.json  //全局配置表
+│   └── theme.config.json  //主题配置表
+├── assets
+│   ├── avatar.jpg  //简历事例头像
+│   ├── icon  //图标
+│   └── template  //模版封面图片文件夹
+├── babel.config.js   //babel(JS 编译器)，能将 ES6 代码转成 ES5,配置一下我们常用的插件 plugins 和 预设值 presets
+├── postcss.config.js  //CSS Modules配置
+├── tsconfig.json  //TypeScript配置
+└── webpack  //webpack相关配置
+    ├── webpack.base.js  //基础公共配置
+    ├── webpack.main.dev.js  //主进程开发环境配置
+    └── webpack.render.dev.js  //渲染进程开发环境配置
+```
 
-- 环境分支
 
-  - [electron-init](https://github.com/PDKSophia/visResumeMook/tree/electron-init)：关于`Electron`相关的初始化配置代码，只涉及到 Electron
-  - [electron-react-init](https://github.com/PDKSophia/visResumeMook/tree/electron-react-init)：将 `Electron + React` 结合起来的初始化配置代码
 
-- 完整项目
-  - [master](https://github.com/PDKSophia/visResumeMook)：简历平台应用完整项目地址
-  - [init-cli](https://github.com/PDKSophia/visResumeMook/tree/init-cli)：完整配置的分支代码，可以基于此分支直接进行项目开发
+### 项目功能
+- 简历信息的录入
+- 数据信息的展示
+- 简历导出 PDF
+- 持久化数据存储
+- 简历模版管理
+- 主题换肤模块
 
-> 支持配套学习分支，章节名对应分支名，如有疑问，请提 issues，同时欢迎提 Merge Request
+### 项目知识点
 
-### 小册章节
+- React全家桶:react-router、react-router-dom、redux
+- React Hooks  
+- TypeScript
+- Babel
+- Webpack
+- Electron
+- 自定义基础组件（按钮、输入框、上传框等）
+- 组件化开发模式
 
-<img src="./cover.jpg" width=200 />
+#### React Hooks
+React 早期的写法以 Class 类组件为主，附带一些纯用于展示的函数组件，但是函数组件是不能控制自身的状态的. 引入全新的 Hooks 写法，如 useEffect、useState、useRef、useCallback、useMemo、useReducer 等等，通过这些钩子函数来管理函数组件的各自状态
 
-- [x] [开篇-小册介绍](https://juejin.cn/book/6950646725295996940)
-- [x] [开篇-技术选型和项目结构](https://juejin.cn/book/6950646725295996940/section/6962895331667230727)
-- [x] [基础篇-Electron 初步认识并掌握基础知识](https://juejin.cn/book/6950646725295996940/section/6961585436967829516)
-- [x] [设计篇-需求功能设计与数据存储方案设计](https://juejin.cn/book/6950646725295996940/section/6962435230061821952)
-- [x] [环境篇-动手搭建我们的简历平台](https://juejin.cn/book/6950646725295996940/section/6961586491285831720)
-- [x] [🏆 500 米里程碑｜环境搭建篇完成](https://juejin.cn/book/6950646725295996940/section/6962898545577820198)
-- [x] [业务篇-首页开发，好的印象能加分](https://juejin.cn/book/6950646725295996940/section/6962938228357726241)
-- [x] [业务篇-如何写我们的 Redux 与 jsonFile](https://juejin.cn/book/6950646725295996940/section/6962906314565484551)
-- [x] [业务篇-简历制作之常用组件设计与简历数据设计](https://juejin.cn/book/6950646725295996940/section/6962895451875966989)
-- [x] [业务篇-简历制作之入口页面开发](https://juejin.cn/book/6950646725295996940/section/6964550757375246366)
-- [x] [业务篇-简历制作之工具条模块与简历模版之间通信](https://juejin.cn/book/6950646725295996940/section/6965876539833450503)
-- [x] [业务篇-简历制作之数据的录入与展示](https://juejin.cn/book/6950646725295996940/section/6962940365221396511)
-- [x] [业务篇-简历制作之导出 PDF](https://juejin.cn/book/6950646725295996940/section/6962940108383191048)
-- [x] [🏆 1000 米里程碑 ｜简历主流程完成](https://juejin.cn/book/6950646725295996940/section/6962940484008280077)
-- [x] [业务篇-首页主题换肤功能实现](https://juejin.cn/book/6950646725295996940/section/6962761759404851239)
-- [x] [业务篇-简历模版列表实现与侧边栏交互效果](https://juejin.cn/book/6950646725295996940/section/6962940426999300109)
-- [x] [业务篇-简历数据存档且自定义存储路径](https://juejin.cn/book/6950646725295996940/section/6962940676258398222)
-- [x] [🏆 1500 米里程碑 ｜丰富功能](https://juejin.cn/book/6950646725295996940/section/6962939774650810380)
-- [x] [优化篇-如何采用 Hooks 优化主题换肤逻辑](https://juejin.cn/book/6950646725295996940/section/6962940589528580132)
-- [x] [优化篇-公共弹窗拆解优化，让职能更加单一](https://juejin.cn/book/6950646725295996940/section/6962941125426413599)
-- [x] [优化篇-采用 Hooks 优化简历 Form 组件](https://juejin.cn/book/6950646725295996940/section/6962941213401939998)
-- [x] [定制篇-自定义 Electron 原生应用菜单](https://juejin.cn/book/6950646725295996940/section/6962938070312157184)
-- [x] [打包篇-Webpack 打包优化](https://juejin.cn/book/6950646725295996940/section/6962941321325576226)
-- [x] [打包篇-Electron 打包体积优化](https://juejin.cn/book/6950646725295996940/section/6962941003858706436)
-- [x] [🏆 到达目的地-应用程序发布](https://juejin.cn/book/6950646725295996940/section/6962941268389265415)
-- [x] [结尾篇-行而不辍，未来可期](https://juejin.cn/book/6950646725295996940/section/6962941492159578143)
-- [x] [彩蛋篇-Webpack 基础介绍与两大利器](https://juejin.cn/book/6950646725295996940/section/6962895331730620423)
-- [x] [彩蛋篇-RcReduxModel 中间件开发设计](https://juejin.cn/book/6950646725295996940/section/6953057493043904549)
-- [x] [期望篇-可视化自定义独特的简历模版](https://juejin.cn/editor/book/6950646725295996940/section/6953057711445671943)
+#### Electron
+使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序  
+它建立在 Chromium 和 Node 之上，为我们提供了很多封装好的模块，跟系统原生 API 互通。  
+Electron 有三大核心  
+- Chromium 用于显示网页内容。  
+- Node.js 用于本地文件系统和操作系统。  
+- Native APIs 用于使用经常需要的本机函数。
+
+#### Electron 与 React 的结合
+
+#### Redux--实时性数据存储
+
+#### 本地文件--持久性数据存储
+
+#### Babel
+它是 JS 编译器，能将 ES6 代码转成 ES5，让我们使用最近的语言特性，而不需要担心兼容性的问题
+
+#### Webpack
+webpack 是一个现代 JavaScript 应用程序的静态模块打包器  
+配合Loader模块打包方案和Plugins 用于扩展 Webpack 的功能，使得 webpack 变得极其灵活
+
+#### ESLint + Prettier
+使用 Prettier 进行代码格式化，相比于 ESLint 中的代码格式规则，它更加专业。同时我们采用 ESLint 来统一代码风格，提高我们的代码质量
+
+#### Less、styleName
+采用 less 进行样式相关的编写,并在Webpack 中配置 CSS Module，最后使用 react-css-modules 实现 styleName 的形式
+
+#### TypeScript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

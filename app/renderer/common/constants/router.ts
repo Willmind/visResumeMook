@@ -22,7 +22,7 @@ export const ROUTER_KEY = {
 // 入口模块
 export const ROUTER_ENTRY = [
   {
-    url: 'https://github.com/PDKSophia/visResumeMook',
+    url: 'https://github.com/Willmind/visResumeMook',
     key: 'intro',
     text: '介绍',
   },
@@ -37,7 +37,7 @@ export const ROUTER_ENTRY = [
     text: '模版',
   },
   {
-    url: 'https://github.com/PDKSophia/visResumeMook',
+    url: 'https://github.com/Willmind/visResumeMook',
     key: 'code',
     text: '源码',
   },
